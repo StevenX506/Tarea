@@ -1,0 +1,26 @@
+<h1>Juegos disponibles</h1>
+
+<div>
+  @for (juego of juegos; track juego.id) {
+
+    <article>
+
+      <img
+        [src]="juego.thumbnail"
+        [alt]="juego.title"
+      >
+
+      <h2>{{ juego.title }}</h2>
+
+      <p>{{ juego.short_description }}</p>
+
+      <p><strong>Género:</strong> {{ juego.genre }}</p>
+
+      <p><strong>Plataforma:</strong> {{ juego.platform }}</p>
+
+      <p><strong>Desarrollador:</strong> {{ juego.developer }}</p>
+
+    </article>
+
+  }
+</div>
