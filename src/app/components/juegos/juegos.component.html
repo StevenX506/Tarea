@@ -1,26 +1,70 @@
-<h1>Juegos disponibles</h1>
+<div class="contenedor-juegos">
 
-<div>
-  @for (juego of juegos; track juego.id) {
+  <h1>Lista de juegos de Free to game</h1>
 
-    <article>
+  <p class="subtitulo">
+    Busca entre los juegos disponibles.
+  </p>
 
-      <img
-        [src]="juego.thumbnail"
-        [alt]="juego.title"
-      >
+  <div class="buscador">
+    <input
+      type="text"
+      placeholder="Buscar juego..."
+      [(ngModel)]="busqueda"
+    >
+  </div>
+
+  <div class="juegos-grid">
+
+@for (juego of filtrarJuegos(); track juego.id) {
+
+  <article class="juego-card">
+
+    <img
+      [src]="juego.thumbnail"
+      [alt]="juego.title"
+    >
+
+    <div class="juego-info">
 
       <h2>{{ juego.title }}</h2>
 
-      <p>{{ juego.short_description }}</p>
+      <p class="descripcion">
+        {{ juego.short_description }}
+      </p>
 
-      <p><strong>Género:</strong> {{ juego.genre }}</p>
+      <div class="datos-juego">
 
-      <p><strong>Plataforma:</strong> {{ juego.platform }}</p>
+        <p>
+          <strong>Género:</strong>
+          {{ juego.genre }}
+        </p>
 
-      <p><strong>Desarrollador:</strong> {{ juego.developer }}</p>
+        <p>
+          <strong>Plataforma:</strong>
+          {{ juego.platform }}
+        </p>
 
-    </article>
+        <p>
+          <strong>Desarrollador:</strong>
+          {{ juego.developer }}
+        </p>
 
-  }
+      </div>
+
+      <a
+        [href]="juego.game_url"
+        class="btn-juego"
+      >
+        Ver juego
+      </a>
+
+    </div>
+
+  </article>
+
+}
+
+  </div>
+
 </div>

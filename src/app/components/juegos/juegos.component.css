@@ -1,21 +1,164 @@
-div {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  padding: 20px;
+.contenedor-juegos {
+max-width: 1500px;
+margin: 0 auto;
+padding: 30px 25px 50px;
 }
 
-article {
-  border: 1px solid #ccc;
-  padding: 15px;
+h1 {
+text-align: center;
+margin: 10px 0 5px;
+font-size: 32px;
+color: #222;
 }
 
-article img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+.subtitulo {
+text-align: center;
+margin: 0 0 25px;
+color: #777;
+font-size: 15px;
 }
 
-article h2 {
-  font-size: 18px;
+.buscador {
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+}
+
+.buscador input {
+width: 100%;
+max-width: 450px;
+padding: 13px 16px;
+border: 1px solid #d5d5d5;
+border-radius: 8px;
+font-size: 16px;
+outline: none;
+background: #fff;
+transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.buscador input:focus {
+border-color: #555;
+box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.08);
+}
+
+
+.juegos-grid {
+display: grid;
+grid-template-columns: repeat(4, 1fr);
+gap: 24px;
+}
+
+
+.juego-card {
+display: flex;
+flex-direction: column;
+overflow: hidden;
+background: #fff;
+border: 1px solid #e5e5e5;
+border-radius: 12px;
+box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.juego-card:hover {
+transform: translateY(-4px);
+box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.juego-card img {
+width: 100%;
+height: 175px;
+object-fit: cover;
+display: block;
+}
+
+.juego-info {
+display: flex;
+flex-direction: column;
+flex: 1;
+padding: 18px;
+}
+
+.juego-info h2 {
+margin: 0 0 10px;
+font-size: 19px;
+color: #222;
+}
+
+.descripcion {
+margin: 0 0 15px;
+color: #666;
+font-size: 14px;
+line-height: 1.5;
+}
+
+.datos-juego {
+margin-top: auto;
+}
+
+.datos-juego p {
+margin: 7px 0;
+font-size: 13px;
+color: #555;
+line-height: 1.4;
+}
+
+.datos-juego strong {
+color: #222;
+}
+
+.btn-juego {
+display: block;
+margin-top: 15px;
+padding: 10px 14px;
+text-align: center;
+text-decoration: none;
+border-radius: 7px;
+background: #222;
+color: #fff;
+font-size: 14px;
+font-weight: 600;
+transition: background 0.2s, transform 0.2s;
+}
+
+.btn-juego:hover {
+background: #444;
+transform: translateY(-1px);
+}
+
+
+@media (max-width: 1100px) {
+
+.juegos-grid {
+grid-template-columns: repeat(3, 1fr);
+}
+
+}
+
+@media (max-width: 800px) {
+
+.juegos-grid {
+grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media (max-width: 550px) {
+
+.contenedor-juegos {
+padding: 20px 15px 40px;
+}
+
+h1 {
+font-size: 26px;
+}
+
+.juegos-grid {
+grid-template-columns: 1fr;
+}
+
+.juego-card img {
+height: 190px;
+}
+
 }
